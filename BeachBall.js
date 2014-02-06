@@ -873,16 +873,6 @@ BeachBall.LoadDefaultSetting = function (option, key) {
 		if (key == 'msg')		{return 'Please enter your desired clicking rate per second (1 - 20):';}
 		if (key == 'desc')		{return ['Off', 'Ninja Only', 'On: <a onclick="BeachBall.SwitchSetting(\'BeachAutoClick\')">' + BeachBall.Settings[option].setting + ' cps</a>'];}
 	}
-	else if (option == 'NinjaClick') {
-		if (key == 'status') 	{return 0;}
-		if (key == 'maxStatus') {return 1;}
-		if (key == 'desc')		{return ['Stealth', 'Ritual'];}
-	}
-    else if (option == 'RiftClick') {
-        if (key == 'status')    {return 0;}
-        if (key == 'maxStatus') {return 2;}
-        if (key == 'desc')      {return ['Off', 'Jump', 'Log Only'];}
-    }
 	else if (option == 'CagedAutoClick') {
 		if (key == 'status') 	{return 0;}
 		if (key == 'maxStatus') {return 3;}
@@ -895,12 +885,17 @@ BeachBall.LoadDefaultSetting = function (option, key) {
 		if (key == 'setting')	{return 0;}
 		if (key == 'desc')		{return ['Off', 'On'];}
 	}
-	
+
 	else if (option == 'MHAutoClick') {
 		if (key == 'status') 	{return 0;}
 		if (key == 'maxStatus') {return 2;}
 		if (key == 'setting')	{return 0;}
 		if (key == 'desc')		{return ['Off', 'On - Prize', 'On - Goat'];}
+	}
+	else if (option == 'NinjaClick') {
+		if (key == 'status') 	{return 0;}
+		if (key == 'maxStatus') {return 1;}
+		if (key == 'desc')		{return ['Stealth', 'Ritual'];}
 	}
 	else if (option == 'RefreshRate') {
 		if (key == 'status') 	{return 0;}
@@ -911,6 +906,11 @@ BeachBall.LoadDefaultSetting = function (option, key) {
 		if (key == 'msg')		{return 'Please enter your desired refresh rate in milliseconds (500 - 3600):';}
 		if (key == 'desc')		{return [BeachBall.Settings[option].setting];}
 	}
+    else if (option == 'RiftClick') {
+        if (key == 'status')    {return 0;}
+        if (key == 'maxStatus') {return 2;}
+        if (key == 'desc')      {return ['Off', 'Jump', 'Log Only'];}
+    }
 	else if (option == 'RKAutoClick') {
 		if (key == 'status') 	{return 0;}
 		if (key == 'maxStatus') {return 2;}
@@ -933,7 +933,7 @@ BeachBall.LoadDefaultSetting = function (option, key) {
 }
 
 BeachBall.LoadSettings = function() {
-	BeachBall.AllOptions = [ 'AudioAlerts', 'BeachAutoClick', 'NinjaClick', 'RiftClick', 'CagedAutoClick', 'LCSolver', 'MHAutoClick', 'RefreshRate', 'RKAutoClick', 'ToolFactory'];
+	BeachBall.AllOptions = [ 'AudioAlerts', 'BeachAutoClick', 'CagedAutoClick', 'LCSolver', 'MHAutoClick', 'NinjaClick', 'RefreshRate', 'RiftClick', 'RKAutoClick', 'ToolFactory'];
 	BeachBall.AllOptionsKeys = ['status', 'maxStatus', 'setting', 'minSetting', 'maxSetting', 'msg', 'desc'];
 	BeachBall.SavedOptionsKeys = ['status', 'setting'];
 	BeachBall.Settings = {};
