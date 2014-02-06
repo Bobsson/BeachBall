@@ -803,6 +803,7 @@ BeachBall.CreateMenu = function() {
 	$('#BeachBall').append('<div class="minifloatbox"> <a onclick="BeachBall.SwitchStatus(\'LCSolver\')"> <h4>Logicat Solver</h4> </a> <div id="LCSolverDesc"></div></div>');
 	$('#BeachBall').append('<div class="minifloatbox"> <a onclick="BeachBall.SwitchStatus(\'BeachAutoClick\')"> <h4>Beach AutoClick</h4> </a> <div id="BeachAutoClickDesc"></div></div>');
 	$('#BeachBall').append('<div class="minifloatbox"> <a onclick="BeachBall.SwitchStatus(\'NinjaClick\')"> <h4>Ninja Clicks</h4> </a> <div id="NinjaClickDesc"></div></div>');
+	$('#BeachBall').append('<div class="minifloatbox"> <a onclick="BeachBall.SwitchStatus(\'RiftClick\')"> <h4>Time Rift Clicks</h4> </a> <div id="RiftClickDesc"></div></div>');
 	$('#BeachBall').append('<div class="minifloatbox" id="BBMontyHaul"> <a onclick="BeachBall.SwitchStatus(\'MHAutoClick\')"> <h4>Monty Haul AutoClick</h4> </a> <div id="MHAutoClickDesc"></div></div>');
 	$('#BeachBall').append('<div class="minifloatbox" id="BBToolFactory"> <a onclick="Molpy.LoadToolFactory(' + BeachBall.toolFactory + ')"> <h4>Load Tool Factory</h4> </a> <div id="ToolFactoryDesc"></div></div>');
 	$('#BeachBall').append('<div class="minifloatbox"> <a onclick="BeachBall.SwitchStatus(\'AudioAlerts\')"> <h4>Audio Alerts</h4> </a> <div id="AudioAlertsDesc"></div></div>');
@@ -877,6 +878,11 @@ BeachBall.LoadDefaultSetting = function (option, key) {
 		if (key == 'maxStatus') {return 1;}
 		if (key == 'desc')		{return ['Stealth', 'Ritual'];}
 	}
+    else if (option == 'RiftClick') {
+        if (key == 'status')    {return 0;}
+        if (key == 'maxStatus') {return 2;}
+        if (key == 'desc')      {return ['Off', 'Jump', 'Log Only'];}
+    }
 	else if (option == 'CagedAutoClick') {
 		if (key == 'status') 	{return 0;}
 		if (key == 'maxStatus') {return 3;}
@@ -927,7 +933,7 @@ BeachBall.LoadDefaultSetting = function (option, key) {
 }
 
 BeachBall.LoadSettings = function() {
-	BeachBall.AllOptions = [ 'AudioAlerts', 'BeachAutoClick', 'NinjaClick', 'CagedAutoClick', 'LCSolver', 'MHAutoClick', 'RefreshRate', 'RKAutoClick', 'ToolFactory'];
+	BeachBall.AllOptions = [ 'AudioAlerts', 'BeachAutoClick', 'NinjaClick', 'RiftClick', 'CagedAutoClick', 'LCSolver', 'MHAutoClick', 'RefreshRate', 'RKAutoClick', 'ToolFactory'];
 	BeachBall.AllOptionsKeys = ['status', 'maxStatus', 'setting', 'minSetting', 'maxSetting', 'msg', 'desc'];
 	BeachBall.SavedOptionsKeys = ['status', 'setting'];
 	BeachBall.Settings = {};
