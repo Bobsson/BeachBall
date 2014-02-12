@@ -5,9 +5,12 @@ BeachBall.Time_to_ONG = 1800000;
 BeachBall.lootBoxes = ['boosts', 'badges', 'hpt', 'ninj', 'chron', 'cyb', 'bean', 'ceil', 'drac', 'stuff', 'land', 'prize', 'discov', 'monums', 'monumg', 'tagged', 'badgesav'];
 BeachBall.resetCaged = 0;
 
+//Add code from NodalW
+
+
 //Version Information
-BeachBall.version = '5.2';
-BeachBall.SCBversion = '3.321'; //Last SandCastle Builder version tested
+BeachBall.version = '5.1.3';
+BeachBall.SCBversion = '3.3331'; //Last SandCastle Builder version tested
 
 //BB Audio Alerts Variables
 BeachBall.audio_Bell = new Audio("http://xenko.comxa.com/Ship_Bell.mp3");
@@ -64,8 +67,11 @@ BeachBall.PuzzleConstructor = function(name) {
 	
 	//Returns the index of a given statement name
 	this.FindStatement = function (searchTerm) {
-		for (i in this.statement) {
-			if (this.statement[i].name == searchTerm) return i;
+		for (var i = 0; i < this.statement.length; i++) {
+			if (this.statement[i].name == searchTerm)
+			{
+				return i;
+			}
 		}
 	}
 	
@@ -127,7 +133,7 @@ BeachBall.PuzzleConstructor = function(name) {
 			newStatement.value = "unknown";
 			
 			// Updates j to the start of the next statement
-			j = this.puzzleString.indexOf("<br><br>", k) + 8;
+			j = this.puzzleString.indexOf("</div>", k) + 10;
 			i++;
 		} while (i < this.size);
 	}
